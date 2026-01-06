@@ -1,0 +1,36 @@
+# Example docker-compose to run GraphHopper as a service
+# - Uses GHCR image ghcr.io/simonneutert/graphhopper:latest
+# - Mounts a local ./data directory for OSM files and ./graph-cache for graphhopper graphs
+# - Exposes port 8989 and includes a healthcheck
+
+services:
+  graphhopper:
+    image: ghcr.io/simonneutert/graphhopper:latest
+    container_name: graphhopper
+    ports:
+      - "8989:8989"
+    # Java runtime options passed to the GraphHopper JVM.
+    # -Xmx controls the maximum heap size and -Xms the initial heap size.
+    # Increase -Xmx for larger graphs or higher concurrency; reduce for low-memory hosts.
+    # You can also add GC tuning flags here if needed (e.g. -XX:+UseG1GC).
+    environment:
+      - JAVA_OPTS=-Xmx2g -Xms2g
+    volumes:
+      - ./data:/data
+      - ./graph-cache:/data/default-gh
+    # Example command: download Germany, Rheinland-Pfalz PBF and bind to all interfaces
+    command: [
+        "--url","https://download.geofabrik.de/europe/germany/rheinland-pfalz-latest.osm.pbf",
+        "--host","0.0.0.0"
+      ]
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8989/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+# Notes:
+# - Replace the image tag with a specific release if needed (ghcr.io/<owner>/graphhopper:<tag>)
+# - The container's entrypoint is `graphhopper.sh` and accepts the same flags shown above
+# - When providing large PBFs, place them under ./data and refer to them with `--input /data/<file>.pbf`

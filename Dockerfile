@@ -1,4 +1,4 @@
-FROM maven:3.9.5-eclipse-temurin-21 as build
+FROM maven:3.9-eclipse-temurin-25 as build
 
 WORKDIR /graphhopper
 
@@ -6,7 +6,7 @@ COPY graphhopper .
 
 RUN mvn clean install -DskipTests
 
-FROM eclipse-temurin:21.0.1_12-jre
+FROM eclipse-temurin:25-jre
 
 ENV JAVA_OPTS "-Xmx1g -Xms1g"
 
@@ -16,10 +16,18 @@ WORKDIR /graphhopper
 
 COPY --from=build /graphhopper/web/target/graphhopper*.jar ./
 
-COPY graphhopper.sh graphhopper/config-example.yml ./
+# You can find the latest config-example.yml here:
+#
+# https://github.com/graphhopper/graphhopper/blob/master/config-example.yml
+COPY graphhopper.sh config-example.yml ./
 
 # Enable connections from outside of the container
 RUN sed -i '/^ *bind_host/s/^ */&# /p' config-example.yml
+
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get install -y curl wget && \
+    rm -rf /var/lib/apt/lists/*
 
 VOLUME [ "/data" ]
 
