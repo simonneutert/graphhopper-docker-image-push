@@ -40,7 +40,7 @@ Checkout `graphhopper.sh` for more usage options such as import.
 
 ## CI / Publishing
 
-- **Where:** The workflow is [.github/workflows/build-and-publish.yml](.github/workflows/build-and-publish.yml).
+- **Where:** [.github/workflows/build-and-publish.yml](.github/workflows/build-and-publish.yml).
 - **Registry:** Images are pushed to `ghcr.io/<owner>/graphhopper` (owner defaults to `simonneutert`).
 - **Auth:** The workflow uses the repository `GITHUB_TOKEN` and requires `packages: write` permission (configured in the workflow). No extra secrets are required for the default setup.
 
