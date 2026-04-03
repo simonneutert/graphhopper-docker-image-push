@@ -17,7 +17,7 @@ Graphhopper team has decided not to build a docker image and this repository is 
 This repository is extremely simple.\
 All it does is the following:
 
-1. Every night at 1 AM it builds the latest code using GitHub Actions from the [graphhopper repository](https://github.com/graphhopper/graphhopper) and publishes the image to the GitHub Container Registry (GHCR)
+1. Every Sunday at 1 AM UTC it builds the latest code using GitHub Actions from the [graphhopper repository](https://github.com/graphhopper/graphhopper) and publishes the image to the GitHub Container Registry (GHCR)
 2. It checks for new GraphHopper version tags and, if found, builds and publishes images with the corresponding tag
 3. Adds a `graphhopper.sh` helper script for running the image
 
