@@ -5,13 +5,11 @@ This repository holds the very basic things in order to make sure there's an upd
 Images can be found on the GitHub Container Registry:  
 https://ghcr.io/israelhikingmap/graphhopper
 
-I would like to first and foremost thank the [graphhopper](https://www.graphhopper.com/) team for their hard work and amazing product! 
-They are doing a great job and we are truly happy to help by contributing to their code base like we had done in the past.
+I would like to first and foremost thank the [graphhopper](https://www.graphhopper.com/) team for their hard work and amazing product!\
+They are doing a great job and we are truly happy to help by contributing to their code base like we had done in the past.\
 Graphhopper team has decided not to build a docker image and this repository is here to bridge that gap.
 
-This repository is extremely simple (says [Israel Hiking Map](https://github.com/IsraelHikingMap) in their [README](https://github.com/IsraelHikingMap/graphhopper-docker-image-push/blob/main/README.md)), yet this fork would never been made without the amazing work of [Israel Hiking Map](https://github.com/IsraelHikingMap) for open sourcing their [docker build setup](https://github.com/IsraelHikingMap/graphhopper-docker-image-push).  
-> Thank you very much!
-
+This repository is extremely simple.\
 All it does is the following:
 
 1. Every week night at 1 AM it builds the latest code using GitHub Actions from the [graphhopper repository](https://github.com/graphhopper/graphhopper) and publishes the image to the GitHub Container Registry (GHCR)
