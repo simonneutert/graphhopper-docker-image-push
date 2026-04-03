@@ -5,7 +5,7 @@ This repository holds the very basic things in order to make sure there's an upd
 Images can be found on the GitHub Container Registry:  
 https://ghcr.io/israelhikingmap/graphhopper
 
-I would like to first and foremost thank the [graphhopper](https://www.graphhopper.com/) team for their hard work and amazing product!\
+We would like to first and foremost thank the [graphhopper](https://www.graphhopper.com/) team for their hard work and amazing product!\
 They are doing a great job and we are truly happy to help by contributing to their code base like we had done in the past.\
 Graphhopper team has decided not to build a docker image and this repository is here to bridge that gap.
 
