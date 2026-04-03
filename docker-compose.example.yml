@@ -5,7 +5,10 @@
 
 services:
   graphhopper:
-    image: ghcr.io/israelhikingmap/graphhopper:latest
+    image: ghcr.io/simonneutert/graphhopper:latest
+    # https://github.com/IsraelHikingMap/graphhopper-docker-image-push/issues/46
+    # when israelhikingmap have their CI/CD back in order, swap back to:
+    # image: ghcr.io/israelhikingmap/graphhopper:latest
     container_name: graphhopper
     ports:
       - "8989:8989"
