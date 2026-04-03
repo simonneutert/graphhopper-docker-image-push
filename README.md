@@ -37,7 +37,6 @@ docker run --entrypoint /bin/bash ghcr.io/israelhikingmap/graphhopper -c "wget h
 
 Checkout `graphhopper.sh` for more usage options such as import.
 
-
 ## CI / Publishing
 
 - **Where:** [.github/workflows/build-and-publish.yml](.github/workflows/build-and-publish.yml).
@@ -78,3 +77,7 @@ CI builds and publishes images to GHCR via GitHub Actions. To build locally use 
 ```
 docker buildx build --platform linux/amd64,linux/arm64 -t ghcr.io/<owner>/graphhopper:local .
 ```
+
+In order to build the docker image locally, please run [`./build.sh`](./build.sh).
+
+Last modified: 2026-04-03
