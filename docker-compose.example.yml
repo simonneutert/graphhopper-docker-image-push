@@ -1,11 +1,11 @@
 # Example docker-compose to run GraphHopper as a service
-# - Uses GHCR image ghcr.io/simonneutert/graphhopper:latest
+# - Uses GHCR image ghcr.io/israelhikingmap/graphhopper:latest
 # - Mounts a local ./data directory for OSM files and ./graph-cache for graphhopper graphs
 # - Exposes port 8989 and includes a healthcheck
 
 services:
   graphhopper:
-    image: ghcr.io/simonneutert/graphhopper:latest
+    image: ghcr.io/israelhikingmap/graphhopper:latest
     container_name: graphhopper
     ports:
       - "8989:8989"
