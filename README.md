@@ -9,6 +9,8 @@ We would like to first and foremost thank the [graphhopper](https://www.graphhop
 They are doing a great job and we are truly happy to help by contributing to their code base like we had done in the past.\
 Graphhopper team has decided not to build a docker image and this repository is here to bridge that gap.
 
+Kudos to [@israelhikingmap](https://github.com/israelhikingmap) for being the proper source of the container image and maintaining it. ❤️
+
 This repository is extremely simple.\
 All it does is the following:
 
@@ -19,6 +21,9 @@ All it does is the following:
 That's all.
 
 ## Quick start
+
+The [config-example.yml](./config-example.yml) was copied from the graphhopper repository and can be used as a template for running the image.\
+In case this needs to be updated, please open an issue, I will be happy to update it. ✌️
 
 For a quick startup you can run the following command to create the andorra routing:
 ```
@@ -75,7 +80,3 @@ CI builds and publishes images to GHCR via GitHub Actions. To build locally use 
 ```
 docker buildx build --platform linux/amd64,linux/arm64 -t ghcr.io/<owner>/graphhopper:local .
 ```
-
-In order to build the docker image locally, please run [`./build.sh`](./build.sh).
-
-Last modified: 2026-04-03
