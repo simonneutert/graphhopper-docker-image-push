@@ -34,3 +34,5 @@ docker run --entrypoint /bin/bash israelhikingmap/graphhopper -c "wget https://d
 Checkout `graphhopper.sh` for more usage options such as import.
 
 In order to build the docker image locally, please run [`./build.sh`](./build.sh).
+
+Last modified: 2026-04-03
