@@ -99,4 +99,4 @@ docker push ghcr.io/<owner>/graphhopper:<tag>
 
 ## Contributing
 
-Feel free to submit issues or pull requests if you would like to improve the code here
+Feel free to submit issues or pull requests if you would like to improve the code here.
